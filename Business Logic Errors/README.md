@@ -5,11 +5,19 @@
 
 ## Summary
 
-* [Examples](#examples)
+* [Methodology](#methodology)
+    * [Review Feature Testing](#review-feature-testing)
+    * [Discount Code Feature Testing](#discount-code-feature-testing)
+    * [Delivery Fee Manipulation](#delivery-fee-manipulation)
+    * [Currency Arbitrage](#currency-arbitrage)
+    * [Premium Feature Exploitation](#premium-feature-exploitation)
+    * [Refund Feature Exploitation](#refund-feature-exploitation)
+    * [Cart/Wishlist Exploitation](#cartwishlist-exploitation)
+    * [Thread Comment Testing](#thread-comment-testing)
 * [References](#references)
 
 
-## Examples
+## Methodology
 
 Unlike other types of security vulnerabilities like SQL injection or cross-site scripting (XSS), business logic errors do not rely on problems in the code itself (like unfiltered user input). Instead, they take advantage of the normal, intended functionality of the application, but use it in ways that the developer did not anticipate and that have undesired consequences.
 
@@ -77,6 +85,7 @@ Common examples of Business Logic Errors.
 
 ## References
 
-* [Business logic vulnerability - OWASP](https://owasp.org/www-community/vulnerabilities/Business_logic_vulnerability)
-* [Business logic vulnerabilities - PortSwigger](https://portswigger.net/web-security/logic-flaws)
-* [Examples of business logic vulnerabilities - PortSwigger](https://portswigger.net/web-security/logic-flaws/examples)
+- [Business Logic Vulnerabilities - PortSwigger - 2024](https://portswigger.net/web-security/logic-flaws)
+- [Business Logic Vulnerability - OWASP - 2024](https://owasp.org/www-community/vulnerabilities/Business_logic_vulnerability)
+- [CWE-840: Business Logic Errors - CWE - March 24, 2011](https://cwe.mitre.org/data/definitions/840.html)
+- [Examples of Business Logic Vulnerabilities - PortSwigger - 2024](https://portswigger.net/web-security/logic-flaws/examples)

