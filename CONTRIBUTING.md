@@ -30,7 +30,7 @@ docker run -v $PWD:/workdir davidanson/markdownlint-cli2:v0.15.0 "**/*.md" --con
 
 ## Techniques Folder
 
-Every section should contains the following files, you can use the `_template_vuln` folder to create a new technique folder:
+Every section should contain the following files, you can use the `_template_vuln` folder to create a new technique folder:
 
 - **README.md**: vulnerability description and how to exploit it, including several payloads, more below
 - **Intruder**: a set of files to give to Burp Intruder
